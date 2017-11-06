@@ -40,7 +40,9 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
-import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
+import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,13 @@ import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
   imports: [
     BrowserModule,
     FormsModule,
-    RuteandoModule
+    RuteandoModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCardModule
 
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo

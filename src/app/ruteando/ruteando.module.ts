@@ -18,6 +18,8 @@ import { RegistroComponent } from '../componentes/registro/registro.component';
 import { MenuCardComponent } from '../componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckboxModule} from '@angular/material';
 // declaro donde quiero que se dirija
 const MiRuteo = [
 {path: '' , component: PrincipalComponent},
@@ -40,7 +42,13 @@ children:
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(MiRuteo)
+    RouterModule.forRoot(MiRuteo),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCardModule
   ],
   exports: [
     RouterModule
