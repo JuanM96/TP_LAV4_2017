@@ -12,7 +12,7 @@ export class MiHttpService {
   
   constructor(public http:Http) { }
   
-  public httpGetPromise(url: string, objeto:any){
+  public httpGetPromise(url: string){
 
 
     return this.http
@@ -21,6 +21,15 @@ export class MiHttpService {
     .then(this.extraerDatos)
     .catch(this.handleError);
   }
+  public httpPostPromise(url: string, objeto:any){
+    
+    
+        return this.http
+        .post(url,objeto)
+        .toPromise()
+        .then(this.extraerDatos)
+        .catch(this.handleError);
+      }
 
   private extraerDatos(resp:Response) {
 

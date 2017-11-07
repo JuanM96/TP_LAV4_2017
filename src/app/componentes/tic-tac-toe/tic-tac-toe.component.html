@@ -1,0 +1,28 @@
+
+<h1 style="text-align: center;">Tic Tac Toe!</h1>
+<form name="juego">
+    <div *ngIf="miJuego.juegoEmpezado">
+      <h1>Turno Del Jugador: <img src="" alt="" *ngIf="miJuego.juega == 1"></h1>
+      <h1>Turno Del Jugador: <img src="" alt="" *ngIf="miJuego.juega == 2"></h1>
+      <ul align=center>
+          <li>
+            <button (click)="verificar(0,turno)"><img src="" alt="" width="100px"></button>
+            <button (click)="verificar(1,turno)"><img src="" alt="" width="100px"></button>
+            <button (click)="verificar(2,turno)"><img src="" alt="" width="100px"></button>
+            <br>
+            <button (click)="verificar(3,turno)"><img src="" alt="" width="100px"></button>
+            <button (click)="verificar(4,turno)"><img src="" alt="" width="100px"></button>
+            <button (click)="verificar(5,turno)"><img src="" alt="" width="100px"></button>
+            <br>
+            <button (click)="verificar(6,turno)"><img src="" alt="" width="100px"></button>
+            <button (click)="verificar(7,turno)"><img src="" alt="" width="100px"></button>
+            <button (click)="verificar(8,turno)"><img src="" alt="" width="100px"></button>
+          </li>
+      </ul>
+    </div>
+
+      <h2><button mat-raised-button color="warn" *ngIf="!miJuego.juegoEmpezado" (click)="nuevoJuego()"  class="btn-lg">Empezar Juego</button></h2>
+      <h3 [hidden]="ocultar" *ngIf="miJuego.gano">Felicidades Usted Gano!</h3>
+      <h3 [hidden]="ocultar" *ngIf="!miJuego.gano">Usted Perdio! La Palabra era: {{miJuego.palabraSecreta}}</h3>
+</form>
+

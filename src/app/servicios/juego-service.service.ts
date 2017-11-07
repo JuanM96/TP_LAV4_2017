@@ -1,15 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Juego } from '../clases/juego';
 import { JuegoAdivina } from '../clases/juego-adivina';
+import {MiHttpService} from './mi-http.service';
 @Injectable()
 export class JuegoServiceService {
 
-  constructor() { }
+  constructor(public miHttp:MiHttpService) { }
 
-  public listar(): Array<Juego> {
+  public TraerLista(){
+    this.miHttp.httpGetPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/ranking/traerTodos")
+    .then(datos => {
+      console.log(JSON.stringify(datos));
+      return datos;
+    })
+    .catch(error => {console.log(error)});
+  }
+  public GuardarJuego(juego:any){
+    this.miHttp.httpPostPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/ranking/alta",juego)
+    .then(datos => {
+      console.log(JSON.stringify(datos));
+    })
+    .catch(error => {console.log(error)});    
+  }
+  /*public listar(): Array<Juego> {
 
     let miArray: Array<Juego> = new Array<Juego>();
-
+ 
     miArray.push(new JuegoAdivina("Juego 1", false));
     miArray.push(new JuegoAdivina("Pepe", true));
     miArray.push(new JuegoAdivina("Juego 3", false));
@@ -32,6 +48,7 @@ export class JuegoServiceService {
     });
 
     return promesa;
-  }
+  }*/
+
 
 }

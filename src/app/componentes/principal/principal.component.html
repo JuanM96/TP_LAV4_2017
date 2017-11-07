@@ -89,18 +89,18 @@
                       </div>
                   </div>
                   <div class="form-bottom">
-                      <form role="form" action="" method="post" class="login-form">
+                      <div class="login-form">
                         <div class="form-group">
                             <label class="sr-only" for="form-username">Username</label>
-                            <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                            <input type="text" name="form-username" [(ngModel)]="usuarioLogIn.username" [ngModelOptions]="{standalone: true}" placeholder="Username..." class="form-username form-control" id="form-username">
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="form-password">Password</label>
-                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                            <input type="password" name="form-password" [(ngModel)]="usuarioLogIn.password" [ngModelOptions]="{standalone: true}" placeholder="Password..." class="form-password form-control" id="form-password">
                         </div>
-                        <button mat-raised-button color="warn">Ingresar</button>
+                        <button mat-raised-button color="warn" (click)="LogIn()">Ingresar</button>
 
-                      </form>
+                      </div>
                   </div>
                 </div>
             </div>
@@ -118,21 +118,21 @@
                       </div>
                   </div>
                   <div class="form-bottom">
-                      <form role="form" action="" method="post" class="registration-form">
+                      <div class="registration-form">
                         <div class="form-group">
                             <label class="sr-only" for="form-first-name">Usuario</label>
-                            <input type="text" name="form-first-name" placeholder="Usuario..." class="form-first-name form-control" id="form-first-name">
+                            <input type="text" name="form-first-name" [(ngModel)]="usuarioSignUp.username" [ngModelOptions]="{standalone: true}" placeholder="Usuario..." class="form-first-name form-control" id="form-first-name">
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="form-last-name">Password</label>
-                            <input type="password" name="form-last-name" placeholder="Password..." class="form-last-name form-control" id="form-last-name">
+                            <input type="password" name="form-last-name" [(ngModel)]="usuarioSignUp.password" [ngModelOptions]="{standalone: true}" placeholder="Password..." class="form-last-name form-control" id="form-last-name">
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="form-email">Email</label>
-                            <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                            <input type="text" name="form-email" [(ngModel)]="usuarioSignUp.email" [ngModelOptions]="{standalone: true}" placeholder="Email..." class="form-email form-control" id="form-email">
                         </div>
-                            <button mat-raised-button color="warn">Registrarse</button>
-                      </form>
+                            <button mat-raised-button color="warn"(click)="SignUp()">Registrarse</button>
+                      </div>
                   </div>
                 </div>
             </div>
