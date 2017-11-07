@@ -8,7 +8,7 @@ export class JuegoServiceService {
   constructor(public miHttp:MiHttpService) { }
 
   public TraerLista(){
-    this.miHttp.httpGetPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/ranking/traerTodos")
+    this.miHttp.httpGetPromise("http://localhost:8080/apirestSalaDeJuegos/apirestjugadores/ranking/traerTodos")
     .then(datos => {
       console.log(JSON.stringify(datos));
       return datos;
@@ -16,7 +16,7 @@ export class JuegoServiceService {
     .catch(error => {console.log(error)});
   }
   public GuardarJuego(juego:any){
-    this.miHttp.httpPostPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/ranking/alta",juego)
+    this.miHttp.httpPostPromise("http://localhost:8080/apirestSalaDeJuegos/apirestjugadores/ranking/alta",juego)
     .then(datos => {
       console.log(JSON.stringify(datos));
     })

@@ -36,5 +36,10 @@ export class MenuComponent implements OnInit {
       break;
     }
   }
+  Salir(){
+    localStorage.setItem('token',"");
+    localStorage.setItem('usuario',"");
+    this.router.navigate(["/"]);
+  }
   
 }
