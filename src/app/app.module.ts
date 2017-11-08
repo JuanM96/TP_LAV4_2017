@@ -42,6 +42,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TicTacToeComponent } from './componentes/tic-tac-toe/tic-tac-toe.component';
 import { HistorialDeJugadasComponent } from './componentes/historial-de-jugadas/historial-de-jugadas.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { HistorialDeJugadasComponent } from './componentes/historial-de-jugadas/
     MatSelectModule,
     MatCardModule,
     HttpModule,
-    MatSidenavModule
+    MatSidenavModule,
+    Ng2SmartTableModule
 
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo

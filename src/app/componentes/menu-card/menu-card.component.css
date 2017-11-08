@@ -7,8 +7,9 @@
     margin: 10px;
     padding-bottom: 10px;
     float: left;
-  background-color: #DEF3A6;
+  background-color: brown;
     text-align: center;
+    color: white;
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */

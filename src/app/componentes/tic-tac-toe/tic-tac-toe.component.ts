@@ -52,6 +52,15 @@ export class TicTacToeComponent implements OnInit {
       juego: this.miJuego.nombre,
       resultado: this.resultado
     };
+    if (this.resultado == "Jugador 1 GANA!") {
+      jugada.resultado = "Gano";
+    }
+    else if(this.resultado == "Jugador 2 GANA!"){
+      jugada.resultado = "Perdio";
+    }
+    else{
+      jugada.resultado = "Empato";
+    }
     this.historial.GuardarJuego(jugada);
   }
 }

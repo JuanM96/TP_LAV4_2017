@@ -28,8 +28,17 @@ export class PiedraPapelTijeraComponent implements OnInit {
     let jugada:any = {
       nombreUsuario: localStorage.getItem('usuario'),
       juego: this.miJuego.nombre,
-      resultado: this.respuesta
+      resultado: this.miJuego.resultado
     };
+    if (this.miJuego.resultado == "Ganaste") {
+      jugada.resultado = "Gano";
+    }
+    else if(this.miJuego.resultado == "Perdiste"){
+      jugada.resultado = "Perdio";
+    }
+    else{
+      jugada.resultado = "Empato";
+    }
     this.historial.GuardarJuego(jugada);
   }
 }

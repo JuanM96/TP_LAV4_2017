@@ -22,7 +22,6 @@ import { TicTacToeComponent } from '../componentes/tic-tac-toe/tic-tac-toe.compo
 // declaro donde quiero que se dirija
 const MiRuteo = [
 {path: '' , component: PrincipalComponent},
-{path: 'QuienSoy' , component: QuienSoyComponent},
 {path: 'Principal' , component: PrincipalComponent},
 { path: 'Juegos' ,
 component: JuegosComponent ,
@@ -33,7 +32,8 @@ children:
       {path: 'PiedraPapelTijera' , component: PiedraPapelTijeraComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
       {path: 'TicTacToe' , component: TicTacToeComponent},
-      {path: 'Historial' , component: HistorialDeJugadasComponent}]
+      {path: 'Historial' , component: HistorialDeJugadasComponent},
+      {path: 'QuienSoy' , component: QuienSoyComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];

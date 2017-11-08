@@ -4,14 +4,15 @@ import { JuegoAdivina } from '../clases/juego-adivina';
 import {MiHttpService} from './mi-http.service';
 @Injectable()
 export class JuegoServiceService {
-
+  listado:any;
   constructor(public miHttp:MiHttpService) { }
 
   public TraerLista(){
     this.miHttp.httpGetPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/ranking/traerTodos")
     .then(datos => {
-      console.log(JSON.stringify(datos));
-      return datos;
+      //console.info(datos)
+      this.listado = datos;
+      console.info(this.listado);
     })
     .catch(error => {console.log(error)});
   }

@@ -9,7 +9,9 @@
     align-items: center;
     justify-content: center;
   }
-  
+  .no-margin {
+    margin: 0;
+  }
   .example-sidenav {
     padding: 20px;
   }
@@ -22,14 +24,16 @@
 
   }
   .navbar-button-right{
-    /*float: right !important;*/
-    margin-right: -15px !important;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
   }
   .navbar-button:hover{
     color: #000000;
   }
   .navbar-default {
-    background-color: #a52a2a;
+    background-color: #ad1616;
     border-color: #a52a2a;
   }
   .navbar-default .navbar-brand {

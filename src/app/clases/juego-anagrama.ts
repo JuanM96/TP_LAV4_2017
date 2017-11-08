@@ -89,5 +89,9 @@ export class JuegoAnagrama extends Juego{
             this.gano = true;
             this.juegoEmpezado = false;
         }
+        else{
+            this.gano = false;
+            this.juegoEmpezado = false;
+        }
     }
 }

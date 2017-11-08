@@ -9,11 +9,34 @@ import { JuegoServiceService } from '../../servicios/juego-service.service';
 export class HistorialDeJugadasComponent implements OnInit {
   listado:any;
   constructor(public historial:JuegoServiceService) { }
-
+  settings = {
+    mode:'in-line',
+    columns: {
+      juego: {
+        title: 'Juego'
+      },
+      nombreUsuario: {
+        title: 'Jugador'
+      },
+      resultado: {
+        title: 'Resultado'
+      }
+    },
+    actions:{
+      edit:false,
+      add:false,
+      delete:false
+    }
+  };
   ngOnInit() {
+    this.TraerJugadas();
   }
   TraerJugadas(){
-    this.listado = this.historial.TraerLista();
+    this.historial.TraerLista();
+    this.listado = this.historial.listado;
+  }
+  Actualizar(){
+    this.TraerJugadas()
   }
 
 }

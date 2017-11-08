@@ -92,8 +92,14 @@ export class AdivinaElNumeroComponent implements OnInit {
     let jugada:any = {
       nombreUsuario: localStorage.getItem('usuario'),
       juego: this.nuevoJuego.nombre,
-      resultado: this.nuevoJuego.gano
+      resultado: ""
     };
+    if (this.nuevoJuego.gano) {
+      jugada.resultado = "Gano";
+    }
+    else{
+      jugada.resultado = "Perdio";
+    }
     this.historial.GuardarJuego(jugada);
   }
 }

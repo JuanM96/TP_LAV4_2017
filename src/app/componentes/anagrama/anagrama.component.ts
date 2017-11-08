@@ -11,6 +11,7 @@ export class AnagramaComponent implements OnInit {
   respuesta:string;
   ocultar:boolean;
   miJuego:JuegoAnagrama;
+  solucion:string;
   constructor(public historial:JuegoServiceService) { }
 
   ngOnInit() {
@@ -20,18 +21,26 @@ export class AnagramaComponent implements OnInit {
   verificar(){
     this.miJuego.Verificar(this.respuesta);
     this.ocultar = false;
+    this.GuardarJugada();
   }
   nuevoJuego(){
     this.miJuego.NuevoJuego();
     this.ocultar = true;
     this.respuesta = "";
+    this.solucion = this.miJuego.palabraSecreta;
   }
   GuardarJugada(){
     let jugada:any = {
       nombreUsuario: localStorage.getItem('usuario'),
       juego: this.miJuego.nombre,
-      resultado: this.miJuego.gano
+      resultado: ""
     };
+    if (this.miJuego.gano) {
+      jugada.resultado = "Gano";
+    }
+    else{
+      jugada.resultado = "Perdio";
+    }
     this.historial.GuardarJuego(jugada);
   }
 }

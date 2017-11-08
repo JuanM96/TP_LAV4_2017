@@ -45,7 +45,7 @@ export class JuegoTicTacToe extends Juego{
         }
     ]
     constructor(nombre?: string, gano?: boolean, jugador?:string) {
-        super("Piedra, Papel y Tijera",gano,jugador);
+        super("Tic Tac Toe",gano,jugador);
     }
     public Verificar(){
         let ret:string = "Nadie";

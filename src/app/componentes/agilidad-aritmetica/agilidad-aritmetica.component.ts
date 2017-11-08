@@ -22,7 +22,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   }
    constructor(public historial:JuegoServiceService) {
     this.ocultarVerificar=true;
-    this.Tiempo=5; 
+    this.Tiempo=15; 
     this.nuevoJuego = new JuegoAgilidad();
     console.info("Inicio agilidad");  
   }
@@ -37,10 +37,10 @@ export class AgilidadAritmeticaComponent implements OnInit {
         this.GuardarJugada()
         clearInterval(this.repetidor);
         
-        this.Tiempo=5;
+        this.Tiempo=15;
         this.nuevoJuego.juegoEmpezado = false;
         this.ocultarVerificar = false;
-
+        this.respuesta = null;
       }
       }, 900);
     console.log(this.nuevoJuego.resultado);
@@ -52,8 +52,9 @@ export class AgilidadAritmeticaComponent implements OnInit {
     if(this.nuevoJuego.Verificar(this.respuesta)){
       this.ocultarVerificar=false;
       clearInterval(this.repetidor);
-      this.Tiempo=5;
+      this.Tiempo=15;
       this.GuardarJugada();
+      this.respuesta = null;
     }
   }
   GuardarJugada(){
@@ -62,6 +63,12 @@ export class AgilidadAritmeticaComponent implements OnInit {
       juego: this.nuevoJuego.nombre,
       resultado: this.nuevoJuego.gano
     };
+    if (this.nuevoJuego.gano) {
+      jugada.resultado = "Gano";
+    }
+    else{
+      jugada.resultado = "Perdio";
+    }
     this.historial.GuardarJuego(jugada);
     console.info(jugada);
   }
