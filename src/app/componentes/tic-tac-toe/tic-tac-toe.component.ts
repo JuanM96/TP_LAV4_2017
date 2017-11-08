@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegoTicTacToe } from '../../clases/juego-tic-tac-toe'
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-tic-tac-toe',
@@ -15,7 +16,7 @@ export class TicTacToeComponent implements OnInit {
   miJuego:JuegoTicTacToe;
   resultado:string;
   ocultar:boolean = true;
-  constructor() { }
+  constructor(public historial:JuegoServiceService) { }
 
   ngOnInit() {
     this.miJuego = new JuegoTicTacToe;
@@ -26,12 +27,16 @@ export class TicTacToeComponent implements OnInit {
     this.ocultar = true;
   }
   verificar(lugar){
-    this.cambiarCasilla(lugar);
-    this.miJuego.TurnoJugado(lugar);
-    this.resultado = this.miJuego.Verificar();
-    if (this.resultado != "Nadie") {
-      this.ocultar = false;
+    if (!this.miJuego.gano) {
+      this.cambiarCasilla(lugar);
+      this.miJuego.TurnoJugado(lugar);
+      this.resultado = this.miJuego.Verificar();
+      if (this.resultado != "Nadie") {
+        this.ocultar = false;
+        this.GuardarJugada();
+      }
     }
+    
   }
   casillasA0(){
     for (var i = 0; i < this.casillas.length; i++) {
@@ -40,5 +45,13 @@ export class TicTacToeComponent implements OnInit {
   }
   cambiarCasilla(lugar){
     this.casillas[lugar] = this.miJuego.turno;
+  }
+  GuardarJugada(){
+    let jugada:any = {
+      nombreUsuario: localStorage.getItem('usuario'),
+      juego: this.miJuego.nombre,
+      resultado: this.resultado
+    };
+    this.historial.GuardarJuego(jugada);
   }
 }

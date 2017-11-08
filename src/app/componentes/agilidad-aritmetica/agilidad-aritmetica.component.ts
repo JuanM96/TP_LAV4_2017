@@ -1,5 +1,6 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAgilidad } from '../../clases/juego-agilidad'
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
@@ -19,7 +20,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   private subscription: Subscription;
   ngOnInit() {
   }
-   constructor() {
+   constructor(public historial:JuegoServiceService) {
     this.ocultarVerificar=true;
     this.Tiempo=5; 
     this.nuevoJuego = new JuegoAgilidad();
@@ -32,11 +33,14 @@ export class AgilidadAritmeticaComponent implements OnInit {
       this.Tiempo--;
       console.log("llego", this.Tiempo);
       if(this.Tiempo==0 ) {
+        this.nuevoJuego.gano = false;
+        this.GuardarJugada()
         clearInterval(this.repetidor);
-        this.verificar();
+        
         this.Tiempo=5;
         this.nuevoJuego.juegoEmpezado = false;
         this.ocultarVerificar = false;
+
       }
       }, 900);
     console.log(this.nuevoJuego.resultado);
@@ -49,6 +53,16 @@ export class AgilidadAritmeticaComponent implements OnInit {
       this.ocultarVerificar=false;
       clearInterval(this.repetidor);
       this.Tiempo=5;
+      this.GuardarJugada();
     }
+  }
+  GuardarJugada(){
+    let jugada:any = {
+      nombreUsuario: "admin"/*localStorage.getItem('usuario')*/,
+      juego: this.nuevoJuego.nombre,
+      resultado: this.nuevoJuego.gano
+    };
+    this.historial.GuardarJuego(jugada);
+    console.info(jugada);
   }
 }

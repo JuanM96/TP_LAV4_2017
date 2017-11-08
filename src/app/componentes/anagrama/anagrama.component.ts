@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegoAnagrama } from '../../clases/juego-anagrama'
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -10,7 +11,7 @@ export class AnagramaComponent implements OnInit {
   respuesta:string;
   ocultar:boolean;
   miJuego:JuegoAnagrama;
-  constructor() { }
+  constructor(public historial:JuegoServiceService) { }
 
   ngOnInit() {
     this.miJuego = new JuegoAnagrama;
@@ -24,5 +25,13 @@ export class AnagramaComponent implements OnInit {
     this.miJuego.NuevoJuego();
     this.ocultar = true;
     this.respuesta = "";
+  }
+  GuardarJugada(){
+    let jugada:any = {
+      nombreUsuario: localStorage.getItem('usuario'),
+      juego: this.miJuego.nombre,
+      resultado: this.miJuego.gano
+    };
+    this.historial.GuardarJuego(jugada);
   }
 }

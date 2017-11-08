@@ -27,7 +27,7 @@ export class PrincipalComponent implements OnInit {
   ngOnInit() {
   }
   LogIn(){
-    this.miHttp.httpPostPromise("http://localhost:8080/apirestSalaDeJuegos/apirestjugadores/jugador/logIn",this.usuarioLogIn)
+    this.miHttp.httpPostPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/jugador/logIn",this.usuarioLogIn)
     .then(datos => {
       //console.info(datos);
       console.log(JSON.stringify(datos));
@@ -38,7 +38,7 @@ export class PrincipalComponent implements OnInit {
     .catch(error => {console.log(error)});    
   }
   SignUp(){
-    this.miHttp.httpPostPromise("http://localhost:8080/apirestSalaDeJuegos/apirestjugadores/jugador/alta",this.usuarioSignUp)
+    this.miHttp.httpPostPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/jugador/alta",this.usuarioSignUp)
     .then(datos => {
       console.log(JSON.stringify(datos));
       alert(datos["respuesta"]);

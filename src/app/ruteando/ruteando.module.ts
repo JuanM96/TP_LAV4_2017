@@ -12,6 +12,7 @@ import { MenuCardComponent } from '../componentes/menu-card/menu-card.component'
 import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+import { HistorialDeJugadasComponent } from '../componentes/historial-de-jugadas/historial-de-jugadas.component';
 import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -31,7 +32,8 @@ children:
       {path: 'Anagrama' , component: AnagramaComponent},
       {path: 'PiedraPapelTijera' , component: PiedraPapelTijeraComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-      {path: 'TicTacToe' , component: TicTacToeComponent}]
+      {path: 'TicTacToe' , component: TicTacToeComponent},
+      {path: 'Historial' , component: HistorialDeJugadasComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];

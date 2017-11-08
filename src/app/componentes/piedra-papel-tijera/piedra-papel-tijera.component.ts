@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegoPiedraPapelTijera } from '../../clases/juego-piedra-papel-tijera'
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -9,7 +10,7 @@ import { JuegoPiedraPapelTijera } from '../../clases/juego-piedra-papel-tijera'
 export class PiedraPapelTijeraComponent implements OnInit {
   respuesta:number;
   miJuego:JuegoPiedraPapelTijera;
-  constructor() { }
+  constructor(public historial:JuegoServiceService) { }
 
   ngOnInit() {
     this.miJuego = new JuegoPiedraPapelTijera;
@@ -21,5 +22,14 @@ export class PiedraPapelTijeraComponent implements OnInit {
   verificar(res){
     this.miJuego.Verificar(res);
     this.respuesta = res;
+    this.GuardarJugada();
+  }
+  GuardarJugada(){
+    let jugada:any = {
+      nombreUsuario: localStorage.getItem('usuario'),
+      juego: this.miJuego.nombre,
+      resultado: this.respuesta
+    };
+    this.historial.GuardarJuego(jugada);
   }
 }

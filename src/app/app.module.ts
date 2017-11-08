@@ -41,6 +41,7 @@ import {MatCardModule,MatSelectModule,MatInputModule,MatButtonModule, MatCheckbo
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { TicTacToeComponent } from './componentes/tic-tac-toe/tic-tac-toe.component';
+import { HistorialDeJugadasComponent } from './componentes/historial-de-jugadas/historial-de-jugadas.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { TicTacToeComponent } from './componentes/tic-tac-toe/tic-tac-toe.compon
     QuienSoyComponent,
     AnagramaComponent,
     PiedraPapelTijeraComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    HistorialDeJugadasComponent
   ],
   imports: [
     BrowserModule,

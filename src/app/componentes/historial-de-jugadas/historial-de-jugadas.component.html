@@ -1,0 +1,19 @@
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Juego</th>
+      <th>Jugador</th>
+      <th>Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let historial of listado">
+      <td>{{historial.juego}} </td>
+      <td>{{historial.nombreUsuario}} </td> 
+      <td *ngIf="historial.resultado">Gano</td>
+      <td *ngIf="!historial.resultado">Perdio</td>
+      <td *ngIf="historial.resultado == 'Empate'">Perdio</td>
+    </tr>
+   
+  </tbody>
+</table>

@@ -15,34 +15,43 @@ export class JuegoPiedraPapelTijera extends Juego{
         if (this.valorJugado == 1) {
             if (valorElegido == 1) {
                 ret = "Empate";
+                this.gano = true;
             }
             if (valorElegido == 2) {
                 ret = "Perdiste";
+                this.gano = true;
             }
             if (valorElegido == 3) {
                 ret = "Ganaste";
+                this.gano = true;
             }
         }
         if (this.valorJugado == 2) {
             if (valorElegido == 1) {
                 ret = "Perdiste";
+                this.gano = true;
             }
             if (valorElegido == 2) {
                 ret = "Empate";
+                this.gano = true;
             }
             if (valorElegido == 3) {
                 ret = "Ganaste";
+                this.gano = true;
             }
         }
         if (this.valorJugado == 3) {
             if (valorElegido == 1) {
                 ret = "Ganaste";
+                this.gano = true;
             }
             if (valorElegido == 2) {
                 ret = "Perdiste";
+                this.gano = true;
             }
             if (valorElegido == 3) {
                 ret = "Empate";
+                this.gano = true;
             }
         }
         this.resultado = ret;
@@ -50,6 +59,7 @@ export class JuegoPiedraPapelTijera extends Juego{
     public NuevoJuego(){
         this.juegoEmpezado = true;
         this.valorJugado = 0;
+        this.gano = false;
     }
     public JugarUnValor(){
         let opcion:number=Math.floor((Math.random() * 3)+1);
