@@ -8,20 +8,31 @@ export class JuegoServiceService {
   constructor(public miHttp:MiHttpService) { }
 
   public TraerLista(){
-    this.miHttp.httpGetPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/ranking/traerTodos")
+   /* this.miHttp.httpGetPromise("http://localhost/apirestSalaDeJuegos/apirestjugadores/ranking/traerTodos")
     .then(datos => {
       //console.info(datos)
       this.listado = datos;
       console.info(this.listado);
     })
-    .catch(error => {console.log(error)});
+    .catch(error => {console.log(error)});*/
+    return JSON.parse(localStorage.getItem('lista'));
   }
   public GuardarJuego(juego:any){
-    this.miHttp.httpPostPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/ranking/alta",juego)
+    /*this.miHttp.httpPostPromise("http://localhost/apirestSalaDeJuegos/apirestjugadores/ranking/alta",juego)
     .then(datos => {
       console.log(JSON.stringify(datos));
     })
-    .catch(error => {console.log(error)});    
+    .catch(error => {console.log(error)});  */  
+    let lista:any = localStorage.getItem['lista'];
+    let listado:any;
+    if (lista != "") {
+      listado = JSON.parse(lista);
+      listado.push(juego);
+      localStorage.setItem('lista',JSON.stringify(listado));
+    }
+    else{
+      localStorage.setItem('lista',JSON.stringify(juego));
+    }
   }
   /*public listar(): Array<Juego> {
 
