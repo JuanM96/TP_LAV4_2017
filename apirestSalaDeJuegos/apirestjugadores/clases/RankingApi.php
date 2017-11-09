@@ -9,7 +9,7 @@ class rankingApi
         return $response->withJson($ranking->Guardar());
     }
 	public function traerRankings($request, $response, $args){
-        return $response->withJson(ranking::TraerTodosrankinges());
+        return $response->withJson(ranking::TraerTodosrankings());
     }
     public function TraerTodos($request, $response, $args) {
         $tamaño = filesize("usuarios.json");

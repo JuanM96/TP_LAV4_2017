@@ -5,6 +5,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 require_once './composer/vendor/autoload.php';
 require_once '/clases/AccesoDatos.php';
 require_once '/clases/jugadorApi.php';
+require_once '/clases/RankingApi.php';
 require_once '/clases/VerificarJWT.php';
 
 $config['displayErrorDetails'] = true;
@@ -30,7 +31,6 @@ $app->group('/jugador', function () {
 $app->group('/ranking', function () {
     $this->post('/alta', \rankingApi::class . ':Alta');
     $this->get('/traerTodos', \rankingApi::class . ':traerRankings');
-    $this->get('/traerTodosTest', \rankingApi::class . ':traerTodos');
-})->add(\verificarJWT::class . ':VerificarToken');
+})/* ->add(\verificarJWT::class . ':VerificarToken') */;
 
 $app->run();
