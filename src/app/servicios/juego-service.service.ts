@@ -15,7 +15,13 @@ export class JuegoServiceService {
       console.info(this.listado);
     })
     .catch(error => {console.log(error)});*/
-    return JSON.parse(localStorage.getItem('lista'));
+    if (localStorage.getItem('lista') != "") {
+      this.listado = JSON.parse(localStorage.getItem('lista'));
+      console.info(JSON.parse(localStorage.getItem('lista')));
+    }
+    else{
+      alert("NO HAY JUEGOS GUARDADOS");
+    }
   }
   public GuardarJuego(juego:any){
     /*this.miHttp.httpPostPromise("http://localhost/apirestSalaDeJuegos/apirestjugadores/ranking/alta",juego)
@@ -23,10 +29,14 @@ export class JuegoServiceService {
       console.log(JSON.stringify(datos));
     })
     .catch(error => {console.log(error)});  */  
-    let lista:any = localStorage.getItem['lista'];
-    let listado:any;
-    if (lista != "") {
-      listado = JSON.parse(lista);
+    let lista:any = localStorage.getItem('lista');
+    let listado:Array<any> = new Array<any>();
+    if (lista != "" && lista != null) {
+    lista = JSON.parse(lista);
+      for (var i = 0; i < lista.length; i++) {
+        var element = lista[i];
+        listado.push(element);
+      }
       listado.push(juego);
       localStorage.setItem('lista',JSON.stringify(listado));
     }

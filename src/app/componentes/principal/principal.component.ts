@@ -26,7 +26,15 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit() {
     localStorage.setItem("token","por ahora no funciona la api");
-    localStorage.setItem("usuario","");
+    if (localStorage.getItem("lista") == null) {
+      localStorage.setItem("lista","");
+    }
+    if (localStorage.getItem("usuario") == null) {
+      localStorage.setItem("usuario","");
+    }
+    if (localStorage.getItem("listaUsuario") == null) {
+      localStorage.setItem("listaUsuario","");
+    }
   }
   LogIn(){
     // this.miHttp.httpPostPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/jugador/logIn",this.usuarioLogIn)
@@ -39,15 +47,27 @@ export class PrincipalComponent implements OnInit {
     // })
     // .catch(error => {console.log(error)});
     let logIn:boolean = false;
-    let ListadoUsuarios:any = JSON.parse(localStorage.getItem('listaUsuario'));
-    ListadoUsuarios.forEach(element => {
+    let ListadoUsuarios:Array<any> = new Array<any>();
+    ListadoUsuarios = JSON.parse(localStorage.getItem('listaUsuario'));
+    // ListadoUsuarios.forEach(element => {
+    //   if (element.username == this.usuarioLogIn.username && element.password == this.usuarioLogIn.password) {
+    //     logIn = true;
+    //     console.log("Login = "+logIn);
+    //     localStorage.setItem("usuario",element.username);
+    //     this.router.navigate(['/Juegos']);
+    //   }
+    // });
+    console.log(ListadoUsuarios);
+    for (var i = 0; i < ListadoUsuarios.length; i++) {
+      var element = ListadoUsuarios[i];
+      console.log("holas");
       if (element.username == this.usuarioLogIn.username && element.password == this.usuarioLogIn.password) {
         logIn = true;
         console.log("Login = "+logIn);
         localStorage.setItem("usuario",element.username);
         this.router.navigate(['/Juegos']);
       }
-    });
+    }
   }
   SignUp(){
     //  this.miHttp.httpPostPromise("http://localhost"/*:8080*/+"/apirestSalaDeJuegos/apirestjugadores/jugador/alta",this.usuarioSignUp)
@@ -56,16 +76,26 @@ export class PrincipalComponent implements OnInit {
     //   alert(datos["respuesta"]);
     // })
     // .catch(error => {console.log(error)});
-    let lista:any = localStorage.getItem['listaUsuario'];
-    let listado:any;
-    if (lista != "") {
-      listado = JSON.parse(lista);
-      listado.push(this.usuarioSignUp);
-      localStorage.setItem('listaUsuario',JSON.stringify(listado));
+    let aux:any;
+    let lista:Array<any> = new Array<any>();
+    aux = localStorage.getItem('listaUsuario');
+    console.info(localStorage.getItem('listaUsuario'));
+    //console.info(JSON.parse(localStorage.getItem('listaUsuario')));
+    if (aux != "") {
+      lista.push( JSON.parse(localStorage.getItem('listaUsuario')));
+      console.info("lista != "+aux);
+      lista.push(this.usuarioSignUp);
+      localStorage.setItem('listaUsuario',JSON.stringify(lista));
     }
     else{
+      console.log("listao else"+lista);
       localStorage.setItem('listaUsuario',JSON.stringify(this.usuarioSignUp));
     }
+  }
+  LogInTest(){
+    this.usuarioLogIn.username = "admin";
+    this.usuarioLogIn.password = "123";
+    this.LogIn();
   }
 
 }
