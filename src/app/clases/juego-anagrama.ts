@@ -85,7 +85,7 @@ export class JuegoAnagrama extends Juego{
         this.juegoEmpezado = true;
     }
     public Verificar(respuesta:string){
-        if (this.palabraSecreta = respuesta) {
+        if (this.palabraSecreta == respuesta) {
             this.gano = true;
             this.juegoEmpezado = false;
         }
