@@ -2,7 +2,15 @@
     width: 500px;
     height: 300px;
   }
-  
+div{
+  font-family: fantasy;
+}
+li{
+  font-family: fantasy;  
+}
+a{
+  font-family: fantasy;  
+}
   .example-sidenav-content {
     display: flex;
     height: 100%;
