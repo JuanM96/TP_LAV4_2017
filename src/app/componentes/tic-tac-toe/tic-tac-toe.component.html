@@ -9,39 +9,39 @@
             <tr>
       <!-- <ul align=center>
           <li> -->
-            <td *ngIf = "casillas[0] == 0" class="td-center-fix"><button (click)="verificar(0,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button>
-            <td *ngIf = "casillas[0] == 1" class="td-center-fix"><button (click)="verificar(0,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[0] == 2" class="td-center-fix"><button (click)="verificar(0,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[1] == 0" class="td-center-1 td-center-fix"><button (click)="verificar(1,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[1] == 1" class="td-center-1 td-center-fix"><button (click)="verificar(1,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[1] == 2" class="td-center-1 td-center-fix"><button (click)="verificar(1,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[2] == 0" class="td-center-fix"><button (click)="verificar(2,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[2] == 1" class="td-center-fix"><button (click)="verificar(2,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[2] == 2" class="td-center-fix"><button (click)="verificar(2,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[0] == 0" class="td-center-fix"><button (click)="verificar(0,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button>
+            <td *ngIf = "casillas[0] == 1" class="td-center-fix"><button (click)="verificar(0,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[0] == 2" class="td-center-fix"><button (click)="verificar(0,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[1] == 0" class="td-center-1 td-center-fix"><button (click)="verificar(1,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[1] == 1" class="td-center-1 td-center-fix"><button (click)="verificar(1,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[1] == 2" class="td-center-1 td-center-fix"><button (click)="verificar(1,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[2] == 0" class="td-center-fix"><button (click)="verificar(2,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[2] == 1" class="td-center-fix"><button (click)="verificar(2,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[2] == 2" class="td-center-fix"><button (click)="verificar(2,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
             <!-- <br> -->
             </tr>
             <tr>
-            <td *ngIf = "casillas[3] == 0" class="td-center-2"><button (click)="verificar(3,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[3] == 1" class="td-center-2"><button (click)="verificar(3,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[3] == 2" class="td-center-2"><button (click)="verificar(3,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[4] == 0" class="td-center-2 td-center-1"><button (click)="verificar(4,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[4] == 1" class="td-center-2 td-center-1"><button (click)="verificar(4,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[4] == 2" class="td-center-2 td-center-1"><button (click)="verificar(4,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[5] == 0" class="td-center-2"><button (click)="verificar(5,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[5] == 1" class="td-center-2"><button (click)="verificar(5,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[5] == 2" class="td-center-2"><button (click)="verificar(5,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[3] == 0" class="td-center-2"><button (click)="verificar(3,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[3] == 1" class="td-center-2"><button (click)="verificar(3,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[3] == 2" class="td-center-2"><button (click)="verificar(3,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[4] == 0" class="td-center-2 td-center-1"><button (click)="verificar(4,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[4] == 1" class="td-center-2 td-center-1"><button (click)="verificar(4,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[4] == 2" class="td-center-2 td-center-1"><button (click)="verificar(4,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[5] == 0" class="td-center-2"><button (click)="verificar(5,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[5] == 1" class="td-center-2"><button (click)="verificar(5,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[5] == 2" class="td-center-2"><button (click)="verificar(5,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
             </tr>
             <!-- <br> -->
             <tr>
-            <td *ngIf = "casillas[6] == 0"><button (click)="verificar(6,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[6] == 1"><button (click)="verificar(6,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[6] == 2"><button (click)="verificar(6,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[7] == 0" class="td-center-1"><button (click)="verificar(7,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[7] == 1" class="td-center-1"><button (click)="verificar(7,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[7] == 2" class="td-center-1"><button (click)="verificar(7,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[8] == 0"><button (click)="verificar(8,miJuego.turno)" ><img src="./../../assets/imagenes/vacio.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[8] == 1"><button (click)="verificar(8,miJuego.turno)" ><img src="./../../assets/imagenes/x.png" alt="" width="100px"></button></td>
-            <td *ngIf = "casillas[8] == 2"><button (click)="verificar(8,miJuego.turno)" ><img src="./../../assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[6] == 0"><button (click)="verificar(6,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[6] == 1"><button (click)="verificar(6,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[6] == 2"><button (click)="verificar(6,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[7] == 0" class="td-center-1"><button (click)="verificar(7,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[7] == 1" class="td-center-1"><button (click)="verificar(7,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[7] == 2" class="td-center-1"><button (click)="verificar(7,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[8] == 0"><button (click)="verificar(8,miJuego.turno)" ><img src="./assets/imagenes/vacio.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[8] == 1"><button (click)="verificar(8,miJuego.turno)" ><img src="./assets/imagenes/x.png" alt="" width="100px"></button></td>
+            <td *ngIf = "casillas[8] == 2"><button (click)="verificar(8,miJuego.turno)" ><img src="./assets/imagenes/circulo.png" alt="" width="100px"></button></td>
           <!-- </li>
       </ul> -->
             </tr>
